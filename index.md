@@ -284,6 +284,9 @@ A teszt lefedettség itt is ```100%```, de hiányzik a határ érték (egyenlős
 A _ConditionalsBoundaryMutator_ mutációval (mely az if kifejezésben a >= jelet > jelre cseréli) 
 a teszt továbbra is sikeres.  Négy mutációból 3 **KILLED** (ez azt jelenti, hogy a mutáció után a teszt sikertelen,
 tehát jó a teszt, nem verhető át) és 1 **SURVIVED**, tehát sikeres a teszt az isPositive hibás eredménye ellenére.
+
+![picture alt](https://github.com/zlaval/Testing/blob/master/pit2.png "Pit result")
+
 A tényleges teljes lefedettség eléréséhez vizsgáljuk meg a határ esetet:
 ```java
 @Test
@@ -292,7 +295,6 @@ public void testIsPositiveWithZero() {
     assertTrue(shouldBeTrueAgain);
 }
 ```
-![picture alt](https://github.com/zlaval/Testing/blob/master/pit2.png "Pit result")
 
 [JUnit4](http://junit.org/junit4/)
 [JUnit5](http://junit.org/junit5/)
