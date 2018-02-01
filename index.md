@@ -101,7 +101,7 @@ Az egységtesztek kiértékelés alapján két fő osztályba sorolhatóak:
 1. Állapot alapú. A megfelelő bemenetre az elvárt kimenetet kapjuk eredményül.
 2. Viselkedés alapú. A megfelelő metódusok hívódtak a megadott bemenetre.
 
-####Egységteszt kritériumok:####
+#### Egységteszt kritériumok:
 1. Kicsi, gyors.
 2. Környezetfüggetlen. Csak akkor törik, ha a tesztelni kívánt kód hibás.
 Gyakori hiba például a tesztek között beragadt állapot.
@@ -110,9 +110,9 @@ Gyakori hiba például a tesztek között beragadt állapot.
 5. Külső rendszereket nem tesztel
 
 
-####Fontos szempontok
+#### Fontos szempontok
 
-#####NE a lefedettség legyen az első
+##### NE a lefedettség legyen az első
 >A lefedettség növelése egyszerű feladat, de ha a tesztek nem vizsgálják a SUT működésének összes lehetséges ágát,
 magas lefedettséggel is sok hiba maradhat a rendszerben.
 
@@ -135,29 +135,29 @@ public void testToLong() {
 ```
 Hiányzik a negatív ág, amikor számokon kívül más karakterek használatával hajtjuk végre a metódust.
 
-#####Legszigorúbb vizsgálat
+##### Legszigorúbb vizsgálat
 >Ha ismerjük a pontos értéket, akkor használjunk **assertEquals**-t **assertNotNull** helyett!
 
-#####Határesetek tesztelése
+##### Határesetek tesztelése
 >Mindíg teszteljük a határeseteket, a legtöbb hiba ott fog előfordulni.
 Részletesebben lásd PIT leírásnál
   
-#####Negatív ágak tesztelése 
+##### Negatív ágak tesztelése 
 >Teszteljük a lehetséges hiba ágakat, hibás bemenő paramétereket...
 
-#####Használjunk minimális mockolt objektumot
+##### Használjunk minimális mockolt objektumot
 >A túl sok mock jelzi a hibás kódfelépítést. Ilyenkor érdemes újratervezni a kódot.
 Ha mindent mockolunk, semmit nem tesztelünk, ami idő és erőforrás pazarló.
 Példa: _mapper objektum unit tesztelése rendben van, de webservice hívásé felesleges_.
 
-#####TDD módszertan
+##### TDD módszertan
 >Segít a kód tervezésében, hisz a már kész teszthez alakítjuk az implementációt. Hozzásegít a lazán kapcsolt, 
 jól fragmentált rendszer felépítéséhez.
 
-#####SRP
+##### SRP
 >Egy osztály egy felelősséggel rendelkezzen, így könnyebb tesztelni, valamint függetleníteni más funkcióktól.
 
-#####Dependency Injection
+##### Dependency Injection
 >A függőségek kezelése nem a felhasználó osztály feladata (SRP)
 
 A következő példában egy külső rendszer hívása történik, majd a válasz mappelése megadott formátumra.
@@ -185,38 +185,38 @@ public Response mapOuterResponseToResponse(ResponseMapperInterface responseMappe
 }
 ```
 
-#####Kerüljük a külső függőségek mockolását
+##### Kerüljük a külső függőségek mockolását
 >Úgy kell kialakítani a kódot, hogy a külső függőségeket lehetőleg ne kelljen mockolni. Mivel bármikor vátozhat egy lib működése,
 ha mockoljuk, a függőség verzió váltásánál nem vesszük észre az esetleges hibás működést.
 
-#####Merjünk refaktorálni
+##### Merjünk refaktorálni
 >A jól kialakított tesztek mutatják, ha valamit elrontunk.
 
-#####Interfacek használata
+##### Interfacek használata
 >Könnyen cserélhető az implementáció éles és teszt kódban is
 
-#####Állapotmentes kód, minimális függőség
+##### Állapotmentes kód, minimális függőség
 
-####Teszt keretrendszerek
+#### Teszt keretrendszerek
 A legelterjedtebb Java teszt eszközök a JUnit valamint a Mockito.
 Sokak által használt még a PowerMock. Segítégével privát adattagokat tesztelhetünk, statikus metódusokt mockolhatunk.
 A használata - nagyon kevés kiváteltől eltekintve - nem ajánlott. Általában hibás tervezést jelent, ha szükség van rá.
 
-#####JUnit
+##### JUnit
 >Biztosítja a tesztek futtatásához, valamint a kimenetek ellenőrzéséhez szükséges funkciókat.
 
 
-####Mockito
+#### Mockito
 >Biztosítja a teszt dublőrök létrehozásához szükséges funkcionalitást, valamint az ezeken végzett műveletek stubolását és validálását.
 Segítségével megváltoztathatjuk egy függvény visszatérési értékét, megvizsgálhatjuk hányszor hívódott meg, milyen paraméterekkel...
 
-#####Teszt dublőrök:
+##### Teszt dublőrök:
 
-######Dummy
+###### Dummy
 >A teszt számára szükséges adatok szimulálása. Pl: Entitások, konfigurációk...
 ```Person person=new Person("DummyPerson")```
 
-######Fake
+###### Fake
 >Egyszerűsített, de működő komponens. Pl: Memórai adatbázis, osztály statikus adatokkal. 
 ```java
 public class FakeAccountRepository implements AccountRepository {
@@ -233,7 +233,7 @@ public class FakeAccountRepository implements AccountRepository {
     }
 }
 ```
-######Mock/Stub
+###### Mock/Stub
 >Adott osztályból készül objektum váz, mely viselkedését a teszhez igazítottan készíthetjük el. 
 ```java
 //create mock
@@ -245,7 +245,7 @@ List mockedList = mock(List.class);
 when(mockedList.get(0)).thenReturn("first");
 ```
 
-######Spy
+###### Spy
 >Egy létező példányt wrappel, így megfigyelhetjük az objektum viselkedését. (meghívódott-e a metódus, hányszor..)
 ```java
 List<Integer> spyList = Mockito.spy(new ArrayList());
@@ -253,7 +253,7 @@ spyList.add(1);
 Mockito.verify(spyList).add(anyInt());
 ```
 
-####PIT
+#### PIT
 Mutációs teszt rendszer, mely segítségével kiszűrhetők a lefedettséget növelő, de hozzáadott értékkel nem rendelkező tesztek.
 
 Az alábbi funkciót teszteljük (az egyszerűség kedvéért a 0-ra true értéket adunk vissza):
