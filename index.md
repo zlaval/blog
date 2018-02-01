@@ -101,7 +101,7 @@ Az egységtesztek kiértékelés alapján két fő osztályba sorolhatóak:
 1. Állapot alapú. A megfelelő bemenetre az elvárt kimenetet kapjuk eredményül.
 2. Viselkedés alapú. A megfelelő metódusok hívódtak a megadott bemenetre.
 
-####Egységteszt kritériumok:
+####Egységteszt kritériumok:####
 1. Kicsi, gyors.
 2. Környezetfüggetlen. Csak akkor törik, ha a tesztelni kívánt kód hibás.
 Gyakori hiba például a tesztek között beragadt állapot.
@@ -292,7 +292,7 @@ public void testIsPositiveWithZero() {
     assertTrue(shouldBeTrueAgain);
 }
 ```
-[logo]: https://github.com/zlaval/Testing/blob/master/pit2.png
+![picture alt](https://github.com/zlaval/Testing/blob/master/pit2.png "Pit result")
 
 [JUnit4](http://junit.org/junit4/)
 [JUnit5](http://junit.org/junit5/)
