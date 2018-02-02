@@ -2,6 +2,7 @@
 * **Unit teszt**
 * **Integrációs teszt**
 * **Rendszerteszt**
+* **Acceptance test**
 
 Rendszerteszt (e2e teszt)
 -
