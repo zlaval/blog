@@ -1,4 +1,4 @@
-# Tesztelés - kiselőadás 2018.02.01 
+# Tesztelés 
 * **Unit teszt**
 * **Integrációs teszt**
 * **Rendszerteszt**
