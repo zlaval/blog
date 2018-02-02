@@ -288,7 +288,7 @@ tehát jó a teszt, nem verhető át) és 1 **SURVIVED**, tehát sikeres a teszt
 
 ![picture alt](https://github.com/zlaval/Testing/blob/master/pit2.png "Pit result")
 
-A tényleges teljes lefedettség eléréséhez vizsgáljuk meg a határ esetet:
+A tényleges teljes lefedettség eléréséhez vizsgáljuk meg a határesetet:
 ```java
 @Test
 public void testIsPositiveWithZero() {
