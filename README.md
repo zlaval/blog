@@ -1,3 +1,3 @@
 Hungarian language!!
 
-Blog posts in md format: [here](https://github.com/zlaval/blog/wiki)
+Blog posts in md format: **[Here](https://github.com/zlaval/blog/wiki)**
